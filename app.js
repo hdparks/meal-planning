@@ -1,5 +1,5 @@
-const quips = include('./quips.js')
-let dishes = include('./dishes.js')
+import quips from './quips.js'
+import dishes from './dishes.js'
 
 //  Shuffle
 let j, temp;
