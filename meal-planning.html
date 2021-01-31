@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+  </head>
+  <style media="screen">
+    body {
+      padding-top:5vw;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+    }
+
+    body > * {
+      margin-bottom:10px;
+    }
+
+    #item-name {
+      font-weight:bold;
+    }
+    
+  </style>
+  <body>
+    <div class="#suggestion">
+      <span id="quip"></span>
+      <span id="item-name"></span>
+    </div>
+    <div class="buttons">
+      <button type="button" id="yep" class="btn btn-primary">Yep</button>
+      <button type="button" id="nope" class="btn btn-secondary">Nope</button>
+    </div>
+    <ol id="saved">
+
+    </ol>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+    <script>
+    const quips = [
+      "What about",
+      "How about",
+      "What do you think of",
+      "Maybe some",
+      "Would you like",
+      "And how about some",
+      "Would you do",
+      "You feeling some",
+      "May I interest you in some",
+      "Could you get me some",
+      "Pretty please, some",
+      "Help me, I'm trapped inside",
+      "How do you feel about",
+      "Would you be down for",
+      "Could you see us having",
+      "Please, may I have some more",
+      "Then can we try",
+      "I've heard good things about",
+      "Uhhhh...",
+      "Then maybe some",
+      "I could probably go for some",
+      "Thinking maybe some"
+    ]
+
+    let dishes = [
+      "Chicken and Rice Casserole",
+      "Burritos",
+      "a new recipe from the D&D book",
+      "White Wine Orzo",
+      "Lemon Butter Chicken",
+      "Ranch Breakfast",
+      "Beef Stroganoff",
+      "Teriyaki Chicken",
+      "Candy Chicken",
+      "Honey Sesame Chicken",
+      "Chicken Stroganoff",
+      "Minestrone Soup & Blueberry Muffins",
+      "Baked Potato Soup",
+      "Chicken Gnocchi Soup",
+      "White Chicken Chili",
+      "Frozen Pizza",
+      "Stuffed Shells",
+      "Taco Soup",
+      "Chicken Rollups",
+      "Enchilada Casserole",
+      "Rustic Chicken"
+    ]
+
+    //  Shuffle
+    let j, temp;
+    for (let i = dishes.length - 1; i > 0; i--){
+      j = Math.floor(Math.random() * (i+1))
+      temp = dishes[i]
+      dishes[i] = dishes[j]
+      dishes[j] = temp
+    }
+
+    //  Iterate through dishes
+    let currentDishIdx = -1
+    function nextDish(){
+      currentDishIdx = (currentDishIdx + 1) % dishes.length
+      $("#quip").text(quips[Math.floor(Math.random() * quips.length)])
+      $("#item-name").text(dishes[currentDishIdx] + "?")
+
+    }
+
+    document.getElementById('yep').addEventListener("click",() => {
+      //  Add current selected dish to the yes column
+      $("#saved").append(`<li>${dishes[currentDishIdx]}</li>`)
+      nextDish()
+    })
+
+    document.getElementById("nope").addEventListener("click",() => {
+      nextDish()
+    })
+
+    nextDish()
+
+    </script>
+  </body>
+</html>
