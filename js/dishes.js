@@ -168,7 +168,7 @@ export default [
       ["Small Shell Pasta",1,"c"],
       ["Good Seasons Italian Dressing",1,"envelopes"],
       ["Italian Seasoning",1,"to taste"],
-      ["Parmesean Cheese",1,"to taste"]
+      ["Parmesean Cheese",1,"to taste"],
 
       //  Blueberry Muffins
       ["Flour",1+1/4,"c"],

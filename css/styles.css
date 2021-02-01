@@ -10,6 +10,48 @@ body > * {
   margin-bottom:10px;
 }
 
+#ingredients > li {
+  display: grid;
+  column-gap: 15px;
+  grid-template-columns: 1fr 1fr
+}
+
 #item-name {
   font-weight:bold;
+}
+
+#saved > li {
+}
+
+#suggestion {
+  margin: auto;
+}
+
+#suggestion-card {
+  display: grid;
+  row-gap:10px;
+}
+
+#suggestion-buttons{
+  margin:auto;
+}
+
+.item{
+  text-align: right;
+}
+
+.dish-row{
+  display: grid;
+  grid-template-columns: 20px 1fr 30px;
+}
+
+.remove{
+  color: #0003;
+  background: none;
+  border:none;
+  transition: color .2s;
+}
+
+.remove:hover{
+  color: red;
 }
