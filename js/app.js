@@ -55,6 +55,11 @@ function updateIngredientsList(){
       let li = enter.append("li")
       li.append("span").classed("item",true)
       li.append("span").classed("quantity",true)
+      //  Toggle line-through on click
+      li.on("click",function(){
+        d3.select(this).classed("line-through",
+          !d3.select(this).classed("line-through"))
+      })
       return li
     })
     .attr("title",d => d.dishes)

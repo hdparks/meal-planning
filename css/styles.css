@@ -1,10 +1,13 @@
 body {
+  font-size: 1em;
   padding-top:5vw;
   display:flex;
   flex-direction:column;
   justify-content:center;
   align-items:center;
 }
+
+
 
 body > * {
   margin-bottom:10px;
@@ -13,7 +16,8 @@ body > * {
 #ingredients > li {
   display: grid;
   column-gap: 15px;
-  grid-template-columns: 1fr 1fr
+  grid-template-columns: 1fr 1fr;
+  cursor: pointer;
 }
 
 #item-name {
@@ -40,9 +44,26 @@ body > * {
   text-align: right;
 }
 
+
+
 .dish-row{
-  display: grid;
-  grid-template-columns: 20px 1fr 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.enumeration{
+  vertical-align: center;
+}
+
+.dish-name{
+  flex-grow: 1;
+  padding-left: 20px;
+}
+
+.line-through{
+  text-decoration: line-through;
 }
 
 .remove{
@@ -54,4 +75,15 @@ body > * {
 
 .remove:hover{
   color: red;
+}
+
+
+@media only screen and (max-width:600px) {
+  body{
+    font-size:2em;
+  }
+
+  #quip{
+    display: block;
+  }
 }
