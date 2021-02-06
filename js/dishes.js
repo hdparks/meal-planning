@@ -278,7 +278,7 @@ export default [
   {
     name:"Rustic Chicken",
     rec:[
-      ["Chicken",2,"breasts"],
+      ["Chicken",4,"thighs"],
       ["Paprika",2,"t"],
       ["Cumin",2,"t"],
       ["Olive Oil",2,"t"],
