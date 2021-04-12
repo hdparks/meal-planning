@@ -261,6 +261,8 @@ export default [
       ["Chive and Onion Cream Cheese",8,"oz"],
       ["Butter",1/4,"c"],
       ["Crescent Rolls",1,"pkgs"],
+      ["Panko",1/2,"c"],
+      ["Italian Seasoning",1,"T"],
       ["Potatoes",2,"potatoes"],
       ["Milk",1/2,"c"]
     ]
